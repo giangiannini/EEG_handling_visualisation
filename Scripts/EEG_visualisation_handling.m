@@ -1,7 +1,9 @@
 %% Add the fieldtrip path
-addpath('C:/Users/nnu02/Documents/MATLAB/fieldtrip-20220104');
-folder = 'C:\Users\nnu02\Desktop\Gian_EEGvisualisation_handling\';
-dataset = strcat(folder, '24_exp_SPN-Cropped.bdf');
+addpath('C:/Users/nnu02/Documents/MATLAB/fieldtrip-20220104'); %depends on your Fieldtrip Path.
+
+folder = 'C:\Users\nnu02\Desktop\EEG_handling_visualisation\'; %Windows
+
+dataset = strcat(folder, 'ID01\ID01.bdf');
 
 %% Load the raw dataset
 cfg = []; 
@@ -14,12 +16,11 @@ cfg = [];
 cfg.resamplefs = 256; 
 continuous = ft_resampledata(cfg, continuous); 
 
-
 %% Open the raw dataset
-cfg = []; 
-cfg.continuous = 'yes'; 
+cfg = [];
+cfg.continuous = 'yes';
 cfg.ylim = [-20 20];
-cfg.blocksize = 5; 
+cfg.blocksize = 5;
 %cfg.datafile = strcat(folder, '24_exp_SPN-Cropped.bdf');
 ft_databrowser(cfg, continuous);
 
@@ -41,7 +42,6 @@ cfg.ylim = [-20 20];
 cfg.blocksize = 5;
 cfg.channel = 1:64;
 ft_databrowser(cfg, continuous_reref_hpf);
-
 %% Epoching!
 %First let's have a look at our events of interest
 cfg                         = [];
@@ -65,7 +65,6 @@ cfg.blocksize = 5;
 cfg.channel = 1:64;
 ft_databrowser(cfg, continuous_reref_hpf);
 
-
 %Then do proper epoch
 trl = [];
 cfg                         = [];
@@ -82,7 +81,6 @@ cfg = [];
 cfg.trl = trl;
 cfg.trl(:,1:3) = round(cfg.trl(:,1:3)/8);
 epoched = ft_redefinetrial(cfg, continuous_reref_hpf);
-
 
 cfg = []; 
 cfg.ylim = [-20 20];
