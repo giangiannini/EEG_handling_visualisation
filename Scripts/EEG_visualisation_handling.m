@@ -1,8 +1,8 @@
 %% Add the fieldtrip path
-addpath('C:/Users/gianluigigiannini/Documents/MATLAB/fieldtrip-20220216'); %depends on your Fieldtrip Path.
+addpath('C:/Users/<yourUsernamehere>/Documents/MATLAB/fieldtrip-20220216'); %depends on your Fieldtrip Path.
 
 %folder = 'C:\Users\<yourUsernamehere>\Desktop\EEG_handling_visualisation\'; %Windows
-folder = '/Users/gianluigigiannini/Desktop/EEG_handling_visualisation-main/';
+folder = '/Users/<yourUsernamehere>/Desktop/EEG_handling_visualisation-main/';%MacOs
 dataset = strcat(folder, 'ID01', filesep, 'ID01.bdf');
 
 %% Load the raw dataset
