@@ -1,9 +1,9 @@
 %% Add the fieldtrip path
-addpath('C:/Users/nnu02/Documents/MATLAB/fieldtrip-20220104'); %depends on your Fieldtrip Path.
+addpath('C:/Users/gianluigigiannini/Documents/MATLAB/fieldtrip-20220216'); %depends on your Fieldtrip Path.
 
-folder = 'C:\Users\<yourUsernamehere>\Desktop\EEG_handling_visualisation\'; %Windows
-folder = '/Users/<yourUsernamehere>/Desktop/EEG_handling_visualisation/';
-dataset = strcat(folder, 'ID01\ID01.bdf');
+%folder = 'C:\Users\<yourUsernamehere>\Desktop\EEG_handling_visualisation\'; %Windows
+folder = '/Users/gianluigigiannini/Desktop/EEG_handling_visualisation-main/';
+dataset = strcat(folder, 'ID01', filesep, 'ID01.bdf');
 
 %% Load the raw dataset
 cfg = []; 
@@ -128,7 +128,7 @@ cfg.viewmode = 'butterfly';
 ft_databrowser(cfg, ERP_baseline);
 
 %% EXPLORATION OF THE RESULTS 
-caplocation = strcat(folder, 'biosemi64.lay');
+caplocation = strcat(folder, filesep, 'Utils', filesep, 'biosemi64.lay');
 
 cfg = [];
 cfg.layout = caplocation;
